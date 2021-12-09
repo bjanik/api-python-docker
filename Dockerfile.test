@@ -1,0 +1,7 @@
+FROM python:3
+
+RUN pip3 install pytest uvicorn fastapi requests
+
+COPY . .
+
+CMD ["pytest" , "tests.py"]

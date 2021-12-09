@@ -1,0 +1,9 @@
+FROM python:3
+
+RUN pip3 install uvicorn fastapi requests
+
+COPY . .
+
+CMD ["uvicorn" , "api:app" , "--reload", "--port", "3000"]
+
+WORKDIR "/api"
