@@ -2,6 +2,8 @@ resource "azurerm_app_service_plan" "app_service_plan" {
     name                = "bart-app-service-plan"
     resource_group_name = azurerm_resource_group.main_rg.name
     location            = local.region
+    kind                = "Linux"
+    reserved            = true
 
     sku {
         tier = "Basic"
